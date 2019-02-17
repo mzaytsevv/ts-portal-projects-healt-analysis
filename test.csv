@@ -1,0 +1,341 @@
+Sequence ID;State;Sequence Title;Error;Details
+101166;Developed;"Admin/Engine: Service, Local Domain, Join Domain, Public Folders, SMTP, Return Message";Sequence is not bound to E2E;
+101173;Developed;"Admin/Engine: Antivirus, Attachment Filter, Anti-Spam, Custom Rule, Archiving, Backup";Sequence is not bound to E2E;
+101177;Developed;"Admin/Engine: Read POP3, New User, Rights, GAL, Alias, Group, List, Resource, Access Policy";Sequence is not bound to E2E;
+101186;Developed;"Domain Admin, Connect Client web: Login, Folder, Email";Sequence is not bound to E2E;
+101190;Developed;"Connect Client web: Create Event, Invitation, Subscribe Calendar, Contact, Task, Note";Sequence is not bound to E2E;
+101192;Developed;"Admin/Engine: Antivirus, Attachment Filter, Anti-Spam, Custom Rule, Archiving, Backup (2nd part)";Sequence is not bound to E2E;
+101193;Developed;"Admin/Engine: Read POP3, New User, Rights, GAL, Alias, Group, List, Resource, Access Policy (Part 2)";Sequence is not bound to E2E;
+101195;Developed;"Connect Client web: IM, Email Signature, Out of Office, Filters, Language, Theme";Sequence is not bound to E2E;
+101202;Developed;"Connect Client desktop application - Send invitation, sharing calendar and creating event, contact, task and note";Sequence is not bound to E2E;
+101203;Developed;"Connect Client desktop application: First Login, Default Client, Menu, Folder, Subscribe, Send and Receive Email";Sequence is not bound to E2E;
+101204;Developed;"Connect Client desktop application - Email signature, out of office, filters, language, scheme change";Sequence is not bound to E2E;
+101206;Developed;"Kerio Outlook Connector: Installation, New Profile, Synchronization";Sequence is not bound to E2E;
+101207;Developed;"Installation, Registration, Licensing and Health Check";Sequence is not bound to E2E;
+101207;Developed;"Installation, Registration, Licensing and Health Check";Test cases status should be Automated;C1176630:Approved For Testing,C1160448:Automation In Progress,C1176716:Approved For Testing,C1177864:Pending Automation,C1177834:Pending Automation,C1177835:Pending Automation,C1177840:Pending Automation,C1177840:Pending Automation
+101217;Deprecated;"Kerio Outlook Connector: Settings, Folder, Send and Read Email";Sequence is not bound to E2E;
+101217;Deprecated;"Kerio Outlook Connector: Settings, Folder, Send and Read Email";Test cases status should be Approved For Testing;C1177864:Pending Automation,C1177834:Pending Automation,C1177835:Pending Automation,C1177840:Pending Automation
+101218;Deprecated;"Kerio Outlook Connector: Offline, New Event, Send Invitation, Share and Subscribe Calendars";Sequence is not bound to E2E;
+101218;Deprecated;"Kerio Outlook Connector: Offline, New Event, Send Invitation, Share and Subscribe Calendars";Test cases status should be Approved For Testing;C1177841:Pending Automation,C1177841:Pending Automation,C1177855:Pending Automation,C1177856:Pending Automation,C1177857:Pending Automation,C1177929:Pending Automation,C1177929:Pending Automation
+101219;Deprecated;"Kerio Outlook Connector: New Contact, Task, Note, Email Signature";Sequence is not bound to E2E;
+101219;Deprecated;"Kerio Outlook Connector: New Contact, Task, Note, Email Signature";Test cases status should be Approved For Testing;C1177858:Pending Automation,C1177859:Pending Automation,C1177860:Pending Automation,C1177861:Pending Automation,C1177861:Pending Automation
+101224;Deprecated;"Kerio Outlook Connector: Out of Office, Filters || Instant Messaging";Sequence is not bound to E2E;
+101224;Deprecated;"Kerio Outlook Connector: Out of Office, Filters || Instant Messaging";Test cases status should be Approved For Testing;C1177862:Pending Automation,C1177862:Pending Automation,C1177863:Pending Automation,C1178007:Pending Automation,C1177742:Pending Automation,C1177743:Pending Automation,C1177744:Pending Automation
+101227;Developed;"Installation, Registration, Licensing: Upgrade to new version on Windows";Sequence is not bound to E2E;
+101227;Developed;"Installation, Registration, Licensing: Upgrade to new version on Windows";Test cases status should be Automated;C1177452:Approved For Testing
+101249;Developed;"Services, IP Address, Basic Operations, Password, Message Size Limit, Items Clean Out, Message Recovery";Sequence is not bound to E2E;
+101250;Developed;"Admin/Engine: User Count, Aliases, Footers, IP Bound Domain, Logo, Public Folders";Sequence is not bound to E2E;
+101257;Developed;"Reindex Public Folders, Domain Rename, SMTP Relay and Delivery, SMTP Settings";Sequence is not bound to E2E;
+101259;Developed;"Add User, SHA Password, Mailing and Forwarding, Group, Server Read/Write, Folder Rights, User Quota, Domain Restriction, Mail Size Limit";Sequence is not bound to E2E;
+101260;Deprecated;"Admin/Engine: Logo, Stats, Support, Highlights, Log";Sequence is not bound to E2E;
+101260;Deprecated;"Admin/Engine: Logo, Stats, Support, Highlights, Log";Test cases status should be Approved For Testing;C1097745:Pending Automation
+101261;Developed;"Regression suite - Users, Groups, Aliases?";Sequence is not bound to E2E;
+101262;Developed;"Admin / Engine (Filter Attachment, Delay SMTP greeting, Certificate-Default/New/Show/Import/Export/Remove Default)";Sequence is not bound to E2E;
+101263;Developed;"Regression suite - Groups";Sequence is not bound to E2E;
+101264;Developed;"Dashboard: WebMail, Links, Language, Download, Calendar, Outlook";Sequence is not bound to E2E;
+101265;Developed;"Mailing lists: New, Edit, Remove, Layout || Resources: Create Equipment";Sequence is not bound to E2E;
+101266;Developed;"Regression suite - Configuration tree, Users, Languages, About";Sequence is not bound to E2E;
+101268;Developed;"Resources: Create Room, User, Reservation Manager, Scheduler, Inactive";Sequence is not bound to E2E;
+101270;Developed;"Installations: Signature, Installation, Service Started, Start Menu";Sequence is not bound to E2E;
+101270;Developed;"Installations: Signature, Installation, Service Started, Start Menu";Test cases status should be Automated;C1097961:Approved For Testing,C1097962:Approved For Testing,C1097964:Approved For Testing,C1097964:Approved For Testing,C1097965:Approved For Testing
+101271;Developed;"Installlation - Repair";Sequence is not bound to E2E;
+101271;Developed;"Installlation - Repair";Test cases status should be Automated;C1097954:Approved For Testing,C1097956:Approved For Testing
+101272;Developed;"Installations (New Version Update Checker, Upgrade From Product, Update Backup Created, Remove The Product Keeping Configuration, Check Files Left After Un-installation)";Sequence is not bound to E2E;
+101272;Developed;"Installations (New Version Update Checker, Upgrade From Product, Update Backup Created, Remove The Product Keeping Configuration, Check Files Left After Un-installation)";Test cases status should be Automated;C1097950:Approved For Testing,C1160092:Approved For Testing,C1097953:Approved For Testing,C1097958:Approved For Testing,C1097959:Approved For Testing
+101273;Developed;"Instant Messaging";Sequence is not bound to E2E;
+101275;Deprecated;"Regression suite-KOFF-Folders";Sequence is not bound to E2E;
+101276;Deprecated;"Installations/KOFF: KOFF Installation, KOFF Profile, New Profile, Connection Ports, Customize Sender.";Sequence is not bound to E2E;
+101277;Developed;"Unhidden Headers";Sequence is not bound to E2E;
+101278;Deprecated;"Compose Email, High Importance, Reply, Forward with Attachment, Mark as Read";Sequence is not bound to E2E;
+101279;Developed;"Regression suite - Aliases?";Sequence is not bound to E2E;
+101280;Deprecated;"Kerio Connect Server Install (Installer Suite, to Deprecate)";Sequence is not bound to E2E;
+101280;Deprecated;"Kerio Connect Server Install (Installer Suite, to Deprecate)";Test cases status should be Approved For Testing;C1160434:Automated,C1160434:Automated
+101282;Deprecated;"KOFF - Emails, Address book, SubFolders, Sotring, Search?";Sequence is not bound to E2E;
+101283;Deprecated;"Kerio Connect Install Client Desktop Application (Installer Suite, to Deprecate)";Sequence is not bound to E2E;
+101283;Deprecated;"Kerio Connect Install Client Desktop Application (Installer Suite, to Deprecate)";Test cases status should be Approved For Testing;C1176483:Automated
+101284;Deprecated;"Kerio Connect Install Kerio Outlook Connector (KOFF) Installation (Installer Suite, to Deprecate)";Sequence is not bound to E2E;
+101286;Developed;"Installations/KOFF: Upgrade, Uninstallation";Sequence is not bound to E2E;
+101286;Developed;"Installations/KOFF: Upgrade, Uninstallation";Test cases status should be Automated;C1097971:Approved For Testing,C1097973:Approved For Testing,C1097972:Approved For Testing,C1097972:Approved For Testing
+101293;Deprecated;"Address Check, Delivery Status Notifications, Reply All, Forward, Mark as Spam";Sequence is not bound to E2E;
+101314;Deprecated;"KOFF Contacts: New, Categorize, Edit, Send Email to, Forward as Business Card, Move";Sequence is not bound to E2E;
+101315;Deprecated;"KOFF Contacts: Create Contact, Search, Send Contact to WebMail, Prepare Folders";Sequence is not bound to E2E;
+101316;Deprecated;"KOFF Groups: Create, Add members, Edit, Delete, Remove, Send Email to Group";Sequence is not bound to E2E;
+101317;Deprecated;"KOFF - Notes, Event, Task, Forward / Move Contact, Flags, Contact Groups";Sequence is not bound to E2E;
+101319;Deprecated;"KOFF Folders: Move with Messages, Delete, Rights, Subscribe, Drag";Sequence is not bound to E2E;
+101321;Deprecated;"KOFF - Calendar (Range, Reccurrence, Categories, Views, Events, Folder)";Sequence is not bound to E2E;
+101323;Deprecated;"KOFF-Simple Event Drag/Drop, Tasks, Contact Folder Actions-Share";Sequence is not bound to E2E;
+101323;Deprecated;"KOFF-Simple Event Drag/Drop, Tasks, Contact Folder Actions-Share";Test cases status should be Approved For Testing;C1098120:Pending Automation,C1098124:Pending Automation
+101327;Deprecated;"KOFF Folders: Subscribe, Public, Archive, Address Book";Sequence is not bound to E2E;
+101328;Deprecated;"KOFF - Calendar (Categories, Views, Events, Folder)";Sequence is not bound to E2E;
+101329;Developed;"Admin / Engine: Services (Conflict, Startup Type, IP/Port, Two), Domain (Primary Login, Edit), Passwords";Sequence is not bound to E2E;
+101332;Developed;"Message size limit";Sequence is not bound to E2E;
+101335;Developed;"User Count Limit removal, Footers HTML and no HTML";Sequence is not bound to E2E;
+101340;Developed;"Footers with placeholders";Sequence is not bound to E2E;
+101344;Developed;"Custom Logo for Kerio Connect Client & Public Folders Settings";Sequence is not bound to E2E;
+101345;Developed;"Public Folders Settings";Sequence is not bound to E2E;
+101346;Developed;"Footers No HTML";Sequence is not bound to E2E;
+101347;Deprecated;"Items clean-out";Sequence is not bound to E2E;
+101347;Deprecated;"Items clean-out";Test cases status should be Approved For Testing;C1159339:Automated
+101348;Developed;"Admin / Engine - Message/Items Recovery";Sequence is not bound to E2E;
+101350;Developed;"Domain rename - Users, Groups, Aliases creation, Mailing list, Resources, and Domain aliases";Sequence is not bound to E2E;
+101352;Developed;"Domain Rename - Folders, Events, Invitations, Verification (Users, Groups, Aliases)";Sequence is not bound to E2E;
+101353;Developed;"Domain rename - Mailing Lists, Resources, User login, KCC, Folders, Aliases, Email";Sequence is not bound to E2E;
+101354;Developed;"SMTP Relay";Sequence is not bound to E2E;
+101356;Developed;"Items clean-out (Part 2)";Sequence is not bound to E2E;
+101356;Developed;"Items clean-out (Part 2)";Test cases status should be Automated;C1159566:Approved For Testing,C1159566:Approved For Testing
+101358;Developed;"Dashboard: Adding Secure HTTP Port in Kerio Connect Administrator, Not supported language in browser, Same language as in Kerio Connect Client, integration page on Windows computer, integration page on Linux computer, Windows - Download Kerio Outlook Connector Auto-Config tool, Create domain, Delete domain";Sequence is not bound to E2E;
+101359;Deprecated;"KCC: Email with Disallowed Attachment | Enable Greylisting, Delay SMTP, Export Private Key, Remove Active Certificate";Sequence is not bound to E2E;
+101359;Deprecated;"KCC: Email with Disallowed Attachment | Enable Greylisting, Delay SMTP, Export Private Key, Remove Active Certificate";Test cases status should be Approved For Testing;C1262837:Pending Automation,C1262847:Pending Automation,C1262848:Pending Automation,C1314495:Pending Automation,C1178091:Pending Automation,C1178091:Pending Automation,C1178091:Pending Automation,C1178061:Pending Automation,C1178093:Pending Automation,C1239123:Pending Automation,C1239123:Pending Automation,C1239157:Pending Automation
+101360;Developed;"Create a new index, Sender Policy, Login check, Password check, Username check, Sendind/Receiving email";Sequence is not bound to E2E;
+101362;Developed;"Enable Antivirus Checking in Debug log, Enabling Grey listing process, Configuring the full text search, Security policy - Setting No Restriction, Sender Policy - Configure anti-spoofing for your server, User with Domain accounts administration rights ";Sequence is not bound to E2E;
+101367;Developed;"Account options - Disable account, Enabled/Disabled moving spam, Password change, D3S/SHA password";Sequence is not bound to E2E;
+101369;Developed;"Mail addresses - Receiving emails, Forwarding: Send email on user's address; Verify email was delivered,  Groups: Receiving email; GAL; User in more groups";Sequence is not bound to E2E;
+101372;Developed;"Administration rights - Server read only, Users, Public Folder rights - Create/Edit/Delete/Access Folder rights";Sequence is not bound to E2E;
+101376;Deprecated;"KCC - Email sending and receiving restrictions";Sequence is not bound to E2E;
+101376;Deprecated;"KCC - Email sending and receiving restrictions";Test cases status should be Approved For Testing;C1262307:Pending Automation,C1262307:Pending Automation,C1262312:Pending Automation,C1262316:Pending Automation,C1262316:Pending Automation,C1262317:Pending Automation,C1262351:Pending Automation,C1262352:Pending Automation
+101377;Developed;"User Limit - Send/receive email with larger/smaller than limit in KCC";Sequence is not bound to E2E;
+101380;Developed;"Admin/Engine - Domain Limit, Import Users, Reindex Mailbox";Sequence is not bound to E2E;
+101382;Developed;"Statistics, Search, and Publish User Information";Sequence is not bound to E2E;
+101383;Developed;"Shared Public Folders rights";Sequence is not bound to E2E;
+101385;Developed;"Admin / Engine - Removing Users, Mail Addresses, Send Email To Group";Sequence is not bound to E2E;
+101390;Developed;"Group - No rights, Domain rights, Whole server read/write rights, Users' rights, Group search (Part 1)";Sequence is not bound to E2E;
+101397;Developed;"Admin / Engine - Mail Addresses, Send Email To Group, Items Recovery, Aliases";Sequence is not bound to E2E;
+101398;Deprecated;"Working with quota";Sequence is not bound to E2E;
+101398;Deprecated;"Working with quota";Test cases status should be Approved For Testing;C1256299:Pending Automation,C1256299:Pending Automation,C1256299:Pending Automation,C1256299:Pending Automation,C1256318:Pending Automation,C1256318:Pending Automation,C1256327:Pending Automation,C1256327:Pending Automation
+101410;Developed;"Group - No rights, Domain rights, Whole server read/write rights, Users' rights, Group search (Part 2)";Sequence is not bound to E2E;
+101420;Developed;"Aliases, Basic operations, Mailing lists";Sequence is not bound to E2E;
+101437;Developed;"Mailing List - Create, Subscribe, Send Email, Moderators";Sequence is not bound to E2E;
+101441;Deprecated;"Verify user Subscription";Sequence is not bound to E2E;
+101442;Developed;"Posting policy";Sequence is not bound to E2E;
+101443;Developed;"Posting Policy - Non Member";Sequence is not bound to E2E;
+101444;Developed;"Posting Policy - Moderator";Sequence is not bound to E2E;
+101445;Developed;"Moderator - Mailing List, Subscription, and Unsubscription";Sequence is not bound to E2E;
+101446;Developed;"Posting policy - Members - Mailing List";Sequence is not bound to E2E;
+101447;Deprecated;"Mailing List - Subscription, Unsubscription";Sequence is not bound to E2E;
+101450;Deprecated;"Archive - Enable archiving of mailing list, Send email into Mailing list, Calendars - Responses";Sequence is not bound to E2E;
+101450;Deprecated;"Archive - Enable archiving of mailing list, Send email into Mailing list, Calendars - Responses";Test cases status should be Approved For Testing;C1098257:Pending Automation,C1098257:Pending Automation,C1175352:Pending Automation,C1175353:Pending Automation,C1175353:Pending Automation,C1175354:Pending Automation,C1175355:Pending Automation,C1175355:Pending Automation,C1175354:Pending Automation,C1175352:Pending Automation,C1175356:Pending Automation,C1175356:Pending Automation,C1175361:Pending Automation,C1175361:Pending Automation,C1175362:Pending Automation,C1175362:Pending Automation
+101451;Developed;"Regression - Kerio Connect Client: Folders, Trash, Composing, Drafts, Contact Autocomplete";Sequence is not bound to E2E;
+101454;Developed;"Emails - Mark Read, Flag, Spam, Delete, Print, View Source";Sequence is not bound to E2E;
+101455;Developed;"Emails - Reply, Forward";Sequence is not bound to E2E;
+101456;Developed;"Regresion - Kerio Connect Client: Emails Paging, Sorting";Sequence is not bound to E2E;
+101458;Developed;"Read/Move/Copy Email Messages, Delivery Status Notification, Reading Confirmation, Text Formatting";Sequence is not bound to E2E;
+101459;Developed;"Attachments, Invite recipients, Contacts: Add, Edit, Delete, Send mail to, and Move by Drag and Drop";Sequence is not bound to E2E;
+101460;Deprecated;"Admin / Engine - Resources, Suggest Idea, Tecnical Support, Service Accessibility";Sequence is not bound to E2E;
+101461;Developed;"Regression - Admin / Engine: SMPT Relay - SMTP, POP3";Sequence is not bound to E2E;
+101462;Developed;"Hide Local IP, Max Number of Messages, SMTP connections, Unknown Recipients, Block Sender";Sequence is not bound to E2E;
+101463;Deprecated;"KOFF - Send Email: disallowed attachment, restricted user;";Sequence is not bound to E2E;
+101463;Deprecated;"KOFF - Send Email: disallowed attachment, restricted user;";Test cases status should be Approved For Testing;C1262896:Pending Automation,C1262894:Pending Automation,C1262889:Pending Automation,C1262907:Pending Automation,C1262903:Pending Automation,C1262908:Pending Automation,C1097572:Automated,C1262849:Pending Automation,C1262849:Pending Automation
+101464;Deprecated;"SMTP greeting; Delete certificates; Security policy; Service Accessibility";Sequence is not bound to E2E;
+101464;Deprecated;"SMTP greeting; Delete certificates; Security policy; Service Accessibility";Test cases status should be Approved For Testing;C1239160:Pending Automation,C1239160:Pending Automation,C1239160:Pending Automation,C1315033:Pending Automation,C1178092:Pending Automation,C1183279:Pending Automation,C1183280:Pending Automation,C1129852:Pending Automation,C1129853:Pending Automation,C1129854:Pending Automation,C1129855:Pending Automation
+101465;Deprecated;"Domain WebAdmin - KOFF - User and Domain Limit";Sequence is not bound to E2E;
+101467;Developed;"Domain WebAdmin - WebAdmin Rights, No Rights";Sequence is not bound to E2E;
+101468;Developed;"Regression - Admin / Engine: SMPT Relay - SMTP Client Options, Delivery";Sequence is not bound to E2E;
+101470;Deprecated;"Domain WebAdmin - Users - User Quota";Sequence is not bound to E2E;
+101471;Developed;"Regression - Domain WebAdmin: Users - Own Domain, Other Local Domain, External Mail";Sequence is not bound to E2E;
+101472;Developed;"Users: Remove Users and Guide Layout, Groups: New, Publish, and Guide Layout";Sequence is not bound to E2E;
+101473;Deprecated;"Aliases - Edit, Remove; Mailing lists - New (Duplicate Name, Adding members)	";Sequence is not bound to E2E;
+101474;Developed;"Domain Admin - Hide, change order, check width of columns; Search options; Help";Sequence is not bound to E2E;
+101475;Deprecated;"Users - Users Limit, Domain Limit";Sequence is not bound to E2E;
+101476;Developed;"Regression - Kerio Connect client: Changes in Contact and Verification in Outlook";Sequence is not bound to E2E;
+101477;Developed;"Contact Groups - New, Edit, Move, Delete";Sequence is not bound to E2E;
+101527;Developed;"Install Kerio Connect with NFR License, Check that AV updates, GreyListing, product updates work, that usage is being reported correctly, that Subscription date matches License, that when subscription expires, updates stop, product keeps on working, and that grace period (30 days) is respected correctly";Sequence is not bound to E2E;
+101528;Developed;"AV updates, GreyListing, product updates, usage report, Subscription date";Sequence is not bound to E2E;
+101528;Developed;"AV updates, GreyListing, product updates, usage report, Subscription date";Test cases status should be Automated;C1290868:Approved For Testing
+101556;Developed;"Regression - Admin/Engine: DKIM, Active Directory, Domain Controller Failover, SMTP, Larger Message Size, Max. Accepted Received Headers, Threads, Number of Emails";Sequence is not bound to E2E;
+101556;Developed;"Regression - Admin/Engine: DKIM, Active Directory, Domain Controller Failover, SMTP, Larger Message Size, Max. Accepted Received Headers, Threads, Number of Emails";Test cases status should be Automated;C1959314:Rejected
+101558;Deprecated;"Delivery Retry Interval, Set Return Message and Warning if Not Delivered, Set Report Language, Encrypted or Corrupted Files, QA Avir Crash Test";Sequence is not bound to E2E;
+101558;Deprecated;"Delivery Retry Interval, Set Return Message and Warning if Not Delivered, Set Report Language, Encrypted or Corrupted Files, QA Avir Crash Test";Test cases status should be Approved For Testing;C1097560:Pending Automation,C1097561:Pending Automation,C1097562:Pending Automation,C1097563:Pending Automation,C1097571:Pending Automation
+101560;Deprecated;"Regression - Admin/Engine: KOFF, Rules Editing, Set Spam Filter, SpamAssasin Rating, SpamEliminator Rating";Sequence is not bound to E2E;
+101560;Deprecated;"Regression - Admin/Engine: KOFF, Rules Editing, Set Spam Filter, SpamAssasin Rating, SpamEliminator Rating";Test cases status should be Approved For Testing;C1097572:Automated,C1262849:Pending Automation,C1262851:Pending Automation,C1262851:Pending Automation,C1262852:Pending Automation,C1097573:Pending Automation,C1968091:Pending Automation,C1968108:Pending Automation,C1097574:Pending Automation,C1097575:Pending Automation,C2588840:Pending Automation,C2588840:Pending Automation
+101561;Deprecated;"Custom rules, Spam Rating limits, Spam logging, Custom whitelist, Internet blacklists";Sequence is not bound to E2E;
+101561;Deprecated;"Custom rules, Spam Rating limits, Spam logging, Custom whitelist, Internet blacklists";Test cases status should be Approved For Testing;C1097576:Pending Automation,C1097576:Pending Automation,C1097576:Pending Automation,C1961454:Pending Automation,C1097577:Pending Automation,C1961455:Pending Automation,C1097579:Pending Automation,C1097579:Pending Automation,C1097581:Pending Automation,C1097582:Pending Automation,C1097583:Pending Automation,C1097584:Pending Automation,C1097584:Pending Automation,C1097585:Pending Automation,C1097585:Pending Automation
+101563;Developed;"Regression - Admin/Engine: Program Name, X-Envelope-To header, Account Lockout";Sequence is not bound to E2E;
+101564;Developed;"Regression - Admin/Engine: Built-in administrator test. Custom logo for Kerio Connect, Kerio News, Export statistics Advance view, System Health, Searching in Logs, Remove Highlights Rule";Sequence is not bound to E2E;
+101574;Deprecated;"Save log - Saving in HTML and Text file; Instant Messaging - XMPP federation";Sequence is not bound to E2E;
+101577;Deprecated;"Regression - Admin/Engine: Removing Users, Posting Policy, Administration Rights";Sequence is not bound to E2E;
+101577;Deprecated;"Regression - Admin/Engine: Removing Users, Posting Policy, Administration Rights";Test cases status should be Approved For Testing;C1263760:Automated,C1263760:Automated,C1263760:Automated,C1263760:Automated,C1289101:Automated,C1289101:Automated
+101578;Developed;"Instant Messaging - XMPP federation";Sequence is not bound to E2E;
+101580;Developed;"Security Policy - No restrictions - Require secure authentication - Require encrypted connection";Sequence is not bound to E2E;
+101581;Deprecated;"Regression - Admin/Engine: Account Lockout, Built-In Administrator Settings, Verify Built-In Administrator in Administation Console and Webmail";Sequence is not bound to E2E;
+101581;Deprecated;"Regression - Admin/Engine: Account Lockout, Built-In Administrator Settings, Verify Built-In Administrator in Administation Console and Webmail";Test cases status should be Approved For Testing;C1097646:Pending Automation,C1097646:Pending Automation,C1097646:Pending Automation,C1097646:Pending Automation,C1097646:Pending Automation
+101582;Developed;"Security Policy - Requre Secure Authentication, Require Encrypted Connection, Check Block IP and Block User for Password Guessing";Sequence is not bound to E2E;
+101583;Developed;"Regression - Admin/Engine: User access policies, XMPP statistics";Sequence is not bound to E2E;
+101584;Developed;"Users - XMPP - Chat and Messages for users in the same and different domains";Sequence is not bound to E2E;
+101585;Developed;"Regression - Admin/Engine: Group - XMPP";Sequence is not bound to E2E;
+101590;Developed;"WAM/Status - Traffic Charts, Statistics, Active Connections, Logs - Debug log - Enable logging of Instant Messaging server in debug log and Verify that there are corresponding records in debug log. Verify system timezone detection";Sequence is not bound to E2E;
+101593;Developed;"KOFF - Installation on non-default folder; Download autoconfiguration; Instal Auto-Config Tool; Create New Profile with invalid credential; Connection Ports; Customize Sender";Sequence is not bound to E2E;
+101594;Deprecated;"Mail, Contact, Calendar Folders - Create, Edit, Delete, Move, and Copy";Sequence is not bound to E2E;
+101595;Deprecated;"Message - Forward, Multiple Forward, Reaing Forwarded, Drag and Drop; Mark as Unread, Mark as NonSpam, Copy email to folder, Delete email, Print email, Clear flag";Sequence is not bound to E2E;
+101596;Deprecated;"Set rights to all subfolders, Addresses from Contacts, Public Folders, Drag-And-Drop - Folder with messages, Basic actions - Attachments, Verify in KCC that email is delivered with High Importance, Verify in outlook with KOFF that email is delivered with High Importance";Sequence is not bound to E2E;
+101597;Developed;"Spam Filter - Custom Rules( Rejected Msgs, Spam Filter, Remove Unused, Stand Alone Process, Spam Assassin Log)";Sequence is not bound to E2E;
+101598;Deprecated;"Regression - KOFF: Sorting, Attachments";Sequence is not bound to E2E;
+101599;Deprecated;"Task and Sticky Notes Folders - Create, Edit, Delete, Move, and Copy";Sequence is not bound to E2E;
+101600;Deprecated;"Mail - Advanced Search";Sequence is not bound to E2E;
+101601;Deprecated;"Regression - KOFF: Clear Categories, Delete and Copy Contacts, Advanced Search";Sequence is not bound to E2E;
+101602;Developed;"Spam Filter - IP Address Groups exclusion,  Custom Rules (Msg Score, Archiving, Backup Directory, POP3 Account, Directory Location)";Sequence is not bound to E2E;
+101603;Deprecated;"Contacts - Changes in Contact";Sequence is not bound to E2E;
+101604;Deprecated;"Contact Groups - Changes in Distribution List";Sequence is not bound to E2E;
+101605;Deprecated;"Actions in DL - New event, Contact Groups";Sequence is not bound to E2E;
+101606;Deprecated;"Regression - KOFF: Calendar - Many day, Simple Event, Print";Sequence is not bound to E2E;
+101607;Deprecated;"Send/Verify email with normal/low importance. Read confirmation and message. Reply with Attachments";Sequence is not bound to E2E;
+101608;Deprecated;"Contacts - Changes with contacts";Sequence is not bound to E2E;
+101609;Deprecated;"Regression - KOFF: Advanced Search";Sequence is not bound to E2E;
+101610;Deprecated;"Actions in DL - New task";Sequence is not bound to E2E;
+101611;Deprecated;"KOFF-Calendar(Simple Invite and Verification, Change Simple Invite and Update Verification, Reminder and Recurrence Pattern)";Sequence is not bound to E2E;
+101612;Deprecated;"KOFF-Calendars - New Meeting - Accept and Tentative Responses (Send the Response Now, Edit the Response Before Sending, Do Not Send a Response)";Sequence is not bound to E2E;
+101613;Deprecated;"KOFF-Calendars - Responses from Inbox - Decline";Sequence is not bound to E2E;
+101614;Deprecated;"Calendars - Responses - Accept response and Tentative response (Send/Edit)";Sequence is not bound to E2E;
+101615;Deprecated;"Regression - KOFF: Calendar - Responses - Tentative and Propose New Time, Decline and Propose New Time";Sequence is not bound to E2E;
+101616;Deprecated;"KOFF-Calendars - Recurring New Meeting - Tentative (Send the Response Now, Edit the Response Before Sending, Do Not Send a Response)";Sequence is not bound to E2E;
+101617;Developed;"Regression - KOFF: Calendars - Responses - Accept, Tentative and No Tentative From the Events Page";Sequence is not bound to E2E;
+101617;Developed;"Regression - KOFF: Calendars - Responses - Accept, Tentative and No Tentative From the Events Page";Test cases status should be Automated;C1195539:Approved For Testing,C1195539:Approved For Testing,C1195539:Approved For Testing,C1195539:Approved For Testing
+101618;Deprecated;"KOFF-Calendars - Recurring New Meeting - Decline (Send the Response Now, Edit the Response Before Sending, Do Not Send a Response)";Sequence is not bound to E2E;
+101619;Deprecated;"KOFF-Calendars - Recurring Meeting - Responses from Events - Decline";Sequence is not bound to E2E;
+101620;Deprecated;"KOFF-Calendars - Responses from Inbox - Tentative and Propose New Time, Decline and Propose New Time";Sequence is not bound to E2E;
+101621;Deprecated;"Regression - KOFF: Calendar - Responses - Recurring Event - Accept, No Accepted from Inbox";Sequence is not bound to E2E;
+101622;Deprecated;"Regression - KOFF: Calendars - Responses - Accept, Tentative and No Tentative From the Events Page";Sequence is not bound to E2E;
+101623;Deprecated;"KOFF-Calendars - Responses from KCC - Simple and Recurring Events";Sequence is not bound to E2E;
+101624;Deprecated;"KOFF - Recurrence Exceptions - Create, Move, Remove, and Change Time";Sequence is not bound to E2E;
+101625;Deprecated;"Calendars - Responses - Tentative response (Don't send response) and Decline responses";Sequence is not bound to E2E;
+101626;Deprecated;"Categories - Single Event";Sequence is not bound to E2E;
+101627;Deprecated;"Calendars - Importance - Views and as Event";Sequence is not bound to E2E;
+101628;Deprecated;"Regression - KOFF: Calendars - Share, Subscribe to Shared Folders, Private Event, Free-Busy";Sequence is not bound to E2E;
+101630;Deprecated;"Calendars - Importance - Views and as Event (II)";Sequence is not bound to E2E;
+101631;Deprecated;"KOFF-Calendars - Delete/Drag and Drop Simple/Recurring Events";Sequence is not bound to E2E;
+101634;Deprecated;"Tasks - New Task-Cancel, Create new completed/incompleted, Edit, Reminder, Move to/from Completed, Range of Recurrence, Edit/Remove/Clear Categories";Sequence is not bound to E2E;
+101634;Deprecated;"Tasks - New Task-Cancel, Create new completed/incompleted, Edit, Reminder, Move to/from Completed, Range of Recurrence, Edit/Remove/Clear Categories";Test cases status should be Approved For Testing;C1211556:Pending Automation,C1211610:Pending Automation,C1211615:Pending Automation,C1211615:Pending Automation,C1211617:Pending Automation
+101635;Deprecated;"Categories - Recurring Event";Sequence is not bound to E2E;
+101636;Deprecated;"Tasks - Task Sharing: Share, Subscribe and Private Events; Task Importance";Sequence is not bound to E2E;
+101636;Deprecated;"Tasks - Task Sharing: Share, Subscribe and Private Events; Task Importance";Test cases status should be Approved For Testing;C1098124:Pending Automation,C1211621:Pending Automation,C1211623:Pending Automation
+101637;Deprecated;"Tasks - Changes in Tasks: Create, Change Name, Change Due Date, Reminder, Set as Completed and Not Completed, Remove Task";Sequence is not bound to E2E;
+101637;Deprecated;"Tasks - Changes in Tasks: Create, Change Name, Change Due Date, Reminder, Set as Completed and Not Completed, Remove Task";Test cases status should be Approved For Testing;C1098131:Pending Automation,C1098132:Pending Automation,C1212305:Pending Automation,C1212306:Pending Automation,C1212307:Pending Automation,C1212309:Pending Automation,C1212311:Pending Automation
+101638;Deprecated;"Regression - KOFF: Notes - New Basic, Advanced, Position, Edit, Forward";Sequence is not bound to E2E;
+101638;Deprecated;"Regression - KOFF: Notes - New Basic, Advanced, Position, Edit, Forward";Test cases status should be Approved For Testing;C1098134:Pending Automation,C1098135:Pending Automation,C1098137:Pending Automation,C1098137:Pending Automation,C1229387:Pending Automation,C1098138:Pending Automation,C1230982:Pending Automation
+101639;Deprecated;"Accept/Decline Task - Send Response Now and Edit Response and Send";Sequence is not bound to E2E;
+101639;Deprecated;"Accept/Decline Task - Send Response Now and Edit Response and Send";Test cases status should be Approved For Testing;C1212319:Pending Automation,C1212319:Pending Automation,C1212319:Pending Automation,C1212319:Pending Automation,C1212321:Pending Automation,C1226648:Pending Automation,C1212320:Pending Automation,C1212320:Pending Automation,C1212322:Pending Automation,C1226778:Pending Automation,C1098127:Pending Automation,C1212324:Pending Automation
+101640;Deprecated;"Regression - KOFF: Notes - Categories, Move, Copy, Delete";Sequence is not bound to E2E;
+101640;Deprecated;"Regression - KOFF: Notes - Categories, Move, Copy, Delete";Test cases status should be Approved For Testing;C1231087:Pending Automation
+101641;Deprecated;"Move Messages; Notes- Copy, Changes in Sticky Notes";Sequence is not bound to E2E;
+101641;Deprecated;"Move Messages; Notes- Copy, Changes in Sticky Notes";Test cases status should be Approved For Testing;C1098134:Pending Automation,C1098134:Pending Automation
+101642;Deprecated;"KOFF-Notes-Changes with Sticky Notes (Sub Folder, Copy, Rename, Move, Remove Notes)";Sequence is not bound to E2E;
+101643;Deprecated;"Regression - KOFF: Forward Notes to Webmail, Out of Office, Delete Messages, Mail Filters, Send Messages to Users Mailbox";Sequence is not bound to E2E;
+101644;Deprecated;"Tasks - Forward, Delete. Drag and Drop. Send to Webmail";Sequence is not bound to E2E;
+101644;Deprecated;"Tasks - Forward, Delete. Drag and Drop. Send to Webmail";Test cases status should be Approved For Testing;C1098128:Pending Automation,C1098128:Pending Automation,C1098128:Pending Automation,C1228716:Pending Automation,C1098128:Pending Automation,C1228736:Pending Automation,C1098130:Pending Automation,C1212325:Pending Automation,C1212326:Pending Automation
+101645;Deprecated;"Regression - KOFF: Delegate / Delegation, Add, Remove, Verify Mailbox";Sequence is not bound to E2E;
+101645;Deprecated;"Regression - KOFF: Delegate / Delegation, Add, Remove, Verify Mailbox";Test cases status should be Approved For Testing;C1098289:Automated
+101647;Deprecated;"KOFF - Out of Office, Synchronization, Clear Cache";Sequence is not bound to E2E;
+101648;Deprecated;"Regression - KOFF: Delegate / Delegation, Inbox Disabled, Inbox Enabled, Send Message as Delegate, Reply as Delegate";Sequence is not bound to E2E;
+101649;Deprecated;"KOFF-Delegates (Delete, Invitation, Response, Decline, Cancel, Recurring Invitation Send/Receive)";Sequence is not bound to E2E;
+101651;Deprecated;"Accept/Decline and verify invitations as owner and delegate";Sequence is not bound to E2E;
+101652;Deprecated;"Accept/Decline and verify invitations as owner and delegate II";Sequence is not bound to E2E;
+101658;Developed;"Calendars - Create new, Simple event, Edit, Delete?";Sequence is not bound to E2E;
+101660;Developed;"Calendars - Print";Sequence is not bound to E2E;
+101661;Developed;"Calendars - Reminder";Sequence is not bound to E2E;
+101665;Developed;"Kerio Connect client - Changes in Contact Group - Create/Rename/Remove Contact Group, Add/Remove User";Sequence is not bound to E2E;
+101665;Developed;"Kerio Connect client - Changes in Contact Group - Create/Rename/Remove Contact Group, Add/Remove User";Test cases status should be Automated;C2705123:Approved For Testing,C2705123:Approved For Testing
+101840;Developed;"Repeat Pattern, End of Repeated Event, Create Private Event, Share Calendar, Subscribe to Shared Calendar, Verify Private Event Details are Hidden, Open Sharing Dialog";Sequence is not bound to E2E;
+101841;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove This Event (First)";Sequence is not bound to E2E;
+101841;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove This Event (First)";Test cases status should be Approved For Testing;C1097651:Automated,C1160336:Automated,C1160370:Pending Automation,C1160370:Pending Automation,C1160673:Pending Automation,C1160675:Pending Automation,C1160675:Pending Automation
+101846;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove Future Events (First)";Sequence is not bound to E2E;
+101846;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove Future Events (First)";Test cases status should be Approved For Testing;C1097651:Automated,C1160336:Automated,C1160383:Pending Automation,C1160383:Pending Automation,C1160336:Automated,C1160681:Pending Automation,C1160682:Pending Automation,C1160336:Automated,C1160682:Pending Automation
+101847;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove This Event (Not First)";Sequence is not bound to E2E;
+101847;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove This Event (Not First)";Test cases status should be Approved For Testing;C1097651:Automated,C1160336:Automated
+101848;Developed;"Create Simple Invitation, Change by Drag, Change via Editor, Change via Editor - Invited Person, Create Repeat Invitation, Create Exception";Sequence is not bound to E2E;
+101849;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove Future Events (Not First)";Sequence is not bound to E2E;
+101849;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove Future Events (Not First)";Test cases status should be Approved For Testing;C1097651:Automated,C1160336:Automated,C1160384:Pending Automation,C1160384:Pending Automation,C1160336:Automated,C1160336:Automated,C1160683:Pending Automation
+101850;Developed;"Regression - KC Client: Calendars - Responses - Simple Event (Create, Accept, Maybe, Decline, View Response)";Sequence is not bound to E2E;
+101854;Developed;"Regression - KC Client: Calendars - Responses - Simple Event (Accept, Maybe, Decline From Event Editor)";Sequence is not bound to E2E;
+101855;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove Future Events (Not First) From Event Editor";Sequence is not bound to E2E;
+101855;Deprecated;"Regression - KC Client: Calendars, Invitations - Remove Future Events (Not First) From Event Editor";Test cases status should be Approved For Testing;C1097651:Automated,C1160336:Automated
+101856;Developed;"Regression - KC Client - Calendars - Responses: Create Repeated, Accept, Maybe, Decline From Calendar Inbox";Sequence is not bound to E2E;
+101858;Developed;"Calendars - Free-Busy	";Sequence is not bound to E2E;
+101859;Developed;"Regression - KC Client - Calendars - Rename event; Day, Week, Month View; Minical; Move Calendar Event; Move Event to calendar";Sequence is not bound to E2E;
+101861;Deprecated;"Calendars - Changes in Event";Sequence is not bound to E2E;
+101862;Deprecated;"Regression - KC Client - Calendars - Responses to Repeated Event: Accept, Maybe, Decline From Event Editor";Sequence is not bound to E2E;
+101862;Deprecated;"Regression - KC Client - Calendars - Responses to Repeated Event: Accept, Maybe, Decline From Event Editor";Test cases status should be Approved For Testing;C1097651:Automated,C1175024:Automated,C1175032:Pending Automation,C1175024:Automated,C1175033:Pending Automation,C1175024:Automated,C1175034:Pending Automation
+101864;Deprecated;"Delete - Simply event, Repeated event";Sequence is not bound to E2E;
+101864;Deprecated;"Delete - Simply event, Repeated event";Test cases status should be Approved For Testing;C1098264:Pending Automation,C1158263:Pending Automation,C1158298:Pending Automation,C1158299:Pending Automation,C1158294:Pending Automation,C1158301:Pending Automation,C1158296:Pending Automation,C1158295:Pending Automation,C1158300:Pending Automation
+101865;Developed;"Preview Pane, Reading - display messages, Create email with external images, (Do not) Display images form other websites directly";Sequence is not bound to E2E;
+101866;Developed;"Create Simple Invitation, Change by Drag, Change via Editor, Change via Editor - Invited Person, Create Repeat Invitation, Create Exception (Part 2)";Sequence is not bound to E2E;
+101869;Developed;"Email signature - Create, Edit, Remove";Sequence is not bound to E2E;
+101870;Developed;"Regression - KC Client - Email Composing: Default 'From', Special Reply, Confirm Requests. OutOfOffice: Basic, Period, 'Keep' Alert, 'Disable' Alert, Auto Response";Sequence is not bound to E2E;
+101871;Developed;"Delegation - Delegate with Calendar, Hide, Remove, Multiple, Changes";Sequence is not bound to E2E;
+101873;Developed;"Webmail - Create Spam Whitelist, Basic Filters";Sequence is not bound to E2E;
+101883;Developed;"Filters - Advanced Filter - From, Cc, To, Subject, Recipient, Sender Header, Attachment";Sequence is not bound to E2E;
+101883;Developed;"Filters - Advanced Filter - From, Cc, To, Subject, Recipient, Sender Header, Attachment";Test cases status should be Automated;C1098299:Approved For Testing
+101885;Deprecated;"Regression - K.C. Client - Advanced Filters: Conditions (Message Size, Spam)";Sequence is not bound to E2E;
+101885;Deprecated;"Regression - K.C. Client - Advanced Filters: Conditions (Message Size, Spam)";Test cases status should be Approved For Testing;C1097651:Automated,C1176755:Automated,C1176755:Automated
+101886;Developed;"Filters - Advanced Filter - Discard, Keep in Inbox, Send Notification, Reject, Mark as Read, Auto Reply";Sequence is not bound to E2E;
+101888;Developed;"Filters - set Advanced Filter - Different conditions";Sequence is not bound to E2E;
+101891;Developed;"Language, Date and Time, Time Zone, Sound in Reminders, Desktop Notification, Send a Suggestion Page, Change Them, Integration, Help File, Logout";Sequence is not bound to E2E;
+101892;Developed;"Quota and Password Change";Sequence is not bound to E2E;
+101893;Developed;"Filters - Advanced Filter -  multiple conditions filter, filter with multiple actions, and  process message by more filters";Sequence is not bound to E2E;
+101895;Deprecated;"Top bar, Calendars: Meeting room reservation, Display resource calendar, Simple Reminder, Full text search - Email";Sequence is not bound to E2E;
+101896;Deprecated;"Calendars - Subscription; Sharing";Sequence is not bound to E2E;
+101896;Deprecated;"Calendars - Subscription; Sharing";Test cases status should be Approved For Testing;C1097542:Automated,C1097651:Automated,C1097651:Automated,C1097658:Automated,C1159971:Automated
+101898;Developed;"Open Send a Suggestion page, Change Theme, Integration, Access to Help File, Logout";Sequence is not bound to E2E;
+101899;Developed;""Kerio Connect Client->Notes (New, Edit. Change Color, Send as Email, Forward as Attachment, Move Between Folders, Deleted)	"";Sequence is not bound to E2E;
+101899;Developed;""Kerio Connect Client->Notes (New, Edit. Change Color, Send as Email, Forward as Attachment, Move Between Folders, Deleted)	"";Test cases status should be Automated;C785598:undefined,C785598:undefined
+101900;Developed;"Regression - K.C. Client - Advanced Filters: Conditions (All Messages), Actions (Move to Folder, Forward)";Sequence is not bound to E2E;
+101901;Developed;"Calendars - Subscription; Sharing; Base Search - Email";Sequence is not bound to E2E;
+101903;Developed;"Simple Search: Calendar, Contacts, Tasks, Notes; Session Expired: Terminated and Stolen Session";Sequence is not bound to E2E;
+101904;Developed;"Regression suite › Kerio Connect client › Public Folders (Default Rights, Creation, Inherited Access Rights, Access Rights From Admin/KC Client Owner/Editor/Reader)?";Sequence is not bound to E2E;
+101905;Deprecated;"Regression suite › Kerio Connect client › Archive Folders (Default Access Rights, Access Rights From Admin, Read Permission, Editor Permission)";Sequence is not bound to E2E;
+101907;Developed;"Regression - K.C. Client - Share folders: Owner Permission for User, Reader, Editor, Owner Permission for Group";Sequence is not bound to E2E;
+101908;Developed;"Subfolders Rights (Owner, Editor, Reader), Subscribe Shared Folders (Owner, Editor, Reader, Hide)";Sequence is not bound to E2E;
+101909;Developed;"Regression - K.C. Client - Share folders: Editor, Owner Permission for Group";Sequence is not bound to E2E;
+101910;Developed;"Public Folders - Domain Check; Archive Folders - Configure, Domains; Login with Wrong password; XSS/Code Execution in Notes; Send Email with Unicode Specific Characters";Sequence is not bound to E2E;
+101911;Deprecated;"Top bar, Calendars: Meeting room reservation, Display resource calendar, Simple Reminder, Full text search - Email II";Sequence is not bound to E2E;
+101912;Developed;"Regression suite › Windows 2016 AD (Edit User in AD, Edited User reflected in KA, Edit User in KA, Edited User reflected in AD, Delete User in KA, Activate User in KA, Delete User in AD, Deleted User reflected in KA)";Sequence is not bound to E2E;
+101913;Developed;"Create domain with AD, Add New user in AD, Add New user - Setting Rights, Verify New User rights is Synchronized in Kerio Connect Administrator, Verify Restrictions rights is Synchronized in Kerio Connect Administrator";Sequence is not bound to E2E;
+102068;Developed;"Admin / Engine: Backup, Font. Domain WebAdmin: Drag and Drop Email, Signature, Webmail Focus on Body, Modify Installed Product";Sequence is not bound to E2E;
+102178;Deprecated;"Kerio Connect Pre-runner (to Deprecate)";Sequence is not bound to E2E;
+102902;Developed;CONNECT-63245 - Admin - Archive & Backup;Test cases from JIRA and from TS portal do not match;JIRA: 'C14353886,C14353885,C14353884,C14353883,C14353882,C14353881,C14353880,C14353879,C14353875,C14353874,C14353873,C14353872,C14353870,C14353869,C14353757', TS: ',C14353757,C14353869,C14353870,C14353879,C14353880'
+102904;Developed;CONNECT-63688 - Web Client - Use notes;Test cases from JIRA and from TS portal do not match;JIRA: 'C14409927,C14409925,C14409924,C14409923,C14409896', TS: 'C14409896,C14409927,C14409925,C14409924,C14409923'
+102905;Developed;CONNECT-64699 -- Admin - Policy;Test cases from JIRA and from TS portal do not match;JIRA: 'C14536708,C14536707,C14536706', TS: 'C14536706,C14536707,C14536708'
+102906;Developed;CONNECT-64696 -- Admin - User Templates;Test cases from JIRA and from TS portal do not match;JIRA: 'C14536521,C14536520,C14536519', TS: 'C14536519,C14536520,C14536521'
+102907;Developed;CONNECT-64698 -- Admin - Custom logo;Test cases from JIRA and from TS portal do not match;JIRA: 'C14536701,C14536700', TS: 'C14536700,C14536701'
+102908;Developed;CONNECT-64695 -- Admin - Company Locations;Test cases from JIRA and from TS portal do not match;JIRA: 'C14536494,C14536493,C14536492', TS: 'C14536492,C14536493,C14536494'
+102909;Developed;CONNECT-64690 -- Admin - Resource;Test cases from JIRA and from TS portal do not match;JIRA: 'C14521484,C14521483,C14521482', TS: 'C14521482,C14521483,C14521484,'
+102910;Developed;CONNECT-63219 - Admin - Send email with malware;Test cases from JIRA and from TS portal do not match;JIRA: 'C14316978,C14316976,C14316960,C14316959,C14316956,C14316950,C14316947', TS: 'C14316947,,C14316956,C14316950'
+102911;Developed;CONNECT-64689 -- Admin - Alias;Test cases from JIRA and from TS portal do not match;JIRA: 'C14520714,C14520713,C14520711', TS: ',C14520711,C14520713,C14520714'
+102912;Developed;CONNECT-64687 -- Admin - Users ;Test cases from JIRA and from TS portal do not match;JIRA: 'C14508830,C14508829,C14508828', TS: 'C14508828,C14508829,C14508830'
+102914;Developed;CONNECT-63220 -- Admin - Send spam email;Test cases from JIRA and from TS portal do not match;JIRA: 'C14344758,C14344757,C14344756,C14344755,C14344754,C14344753,C14344752', TS: ',C14344752,C14344753,C14344756,C14344757,C14344758'
+102915;Developed;CONNECT-63666 - Web Client - Search emails;Test cases from JIRA and from TS portal do not match;JIRA: 'C14423056,C14423055,C14417751,C14417749,C14417748,C14417746,C14417744,C14417743', TS: ',,C14417744,C14417746,C14417751,C14423055,C14423056'
+102917;Developed;CONNECT-61877 - Web Client - User sends and receives emails;Test cases from JIRA and from TS portal do not match;JIRA: 'C14305008,C14305006', TS: ',,C14305006,C14305008'
+102918;Developed;CONNECT-64426 -- Web Client - email public folders;Test cases from JIRA and from TS portal do not match;JIRA: 'C14493866,C14493862,C14493860,C14493855', TS: 'C14493855,C14493860,C14493862,C14493866'
+102919;Developed;CONNECT-61921 - Web Client - Use and share calendar;Test cases from JIRA and from TS portal do not match;JIRA: 'C22029254,C22029251,C22029247,C22029240,C14202918,C14202916', TS: ',C14202916,C14202918'
+102922;Developed;CONNECT-64427 -- Web Client - sharing tasks via public folders;Test cases from JIRA and from TS portal do not match;JIRA: 'C14491285,C14491277,C14481392,C14481388,C14481385', TS: 'C14481385,C14491277,C14491285,C14481388,C14481392'
+102923;Developed;CONNECT-61922 - Web Client - Use and share folders;Test cases from JIRA and from TS portal do not match;JIRA: 'C14202802,C14202749', TS: ',,C14202749,C14202802'
+102924;Developed;CONNECT-63524 - Web Client - Use special characters;Test cases from JIRA and from TS portal do not match;JIRA: 'C14391344,C14391343,C14391342', TS: ',C14391342,C14391343,C14391344'
+102925;Developed;CONNECT-63739 -- Web Client - Use calendar delegation;Test cases from JIRA and from TS portal do not match;JIRA: 'C14443176,C14443175', TS: ',C14443175,C14443176'
+102926;Developed;CONNECT-64306 -- Web Client - Restore deleted folder;Test cases from JIRA and from TS portal do not match;JIRA: 'C14473878,C14473877', TS: 'C14473877,C14473878'
+102927;Developed;CONNECT-64307 -- Web Client - Use email delegation;Test cases from JIRA and from TS portal do not match;JIRA: 'C14475237,C14475236', TS: ',C14475236,C14475237'
+102928;Developed;CONNECT-64365 -- Web Client - Move spam emails to inbox;Test cases from JIRA and from TS portal do not match;JIRA: 'C14481430,C14481399', TS: ',C14481399,C14481430'
+102929;Developed;CONNECT-61923 - Web Client - Use and share contacts;Test cases from JIRA and from TS portal do not match;JIRA: 'C14189525,C14189494', TS: ',C14189494,C14189525'
+102930;Developed;CONNECT-63667 - Web Client - Search calendar;Test cases from JIRA and from TS portal do not match;JIRA: 'C14435157,C14423357,C14423356,C14423354,C14423353', TS: ',,C14423357,C14435157,C14423353,C14423354,C14423356'
+102931;Developed;CONNECT-64453 -- Web Client - calendar reschedule recurring event;Test cases from JIRA and from TS portal do not match;JIRA: 'C14493128,C14493125,C14493124', TS: ',C14493124,C14493125,C14493128'
+102932;Developed;CONNECT-64462 -- Web Client - Email forwarding;Test cases from JIRA and from TS portal do not match;JIRA: 'C14498060,C14498056', TS: ',C14498056,C14498060'
+102933;Developed;CONNECT-64466 -- Web Client - Use alias to email address;Test cases from JIRA and from TS portal do not match;JIRA: 'C14498096,C14498095', TS: ',C14498095,C14498096'
+102934;Developed;CONNECT-63687 - Web Client - Use tasks;Test cases from JIRA and from TS portal do not match;JIRA: 'C14409885,C14407248', TS: ',C14407248,C14409885'
+102935;Developed;CONNECT-64454 - Web Client - calendar reschedule event;Test cases from JIRA and from TS portal do not match;JIRA: 'C14493292,C14493291,C14493290', TS: ',C14493290,C14493291,C14493292'
+102936;Developed;CONNECT-64442 - Web Client - public contacts;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492768', TS: ',C14492768'
+102937;Developed;CONNECT-64443 - Web Client - Search notes;Test cases from JIRA and from TS portal do not match;JIRA: 'C14491309', TS: ',C14491309'
+102938;Developed;CONNECT-64444 - Web Client - Search tasks;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492877', TS: ',C14492877'
+102939;Developed;CONNECT-64455 - Web Client - send note as message;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492879', TS: ',C14492879'
+102940;Developed;CONNECT-64810 - Kerio Connect - E2E Scenarios - C:14493213 - Forward task as attachment and verify the content;Test cases from JIRA and from TS portal do not match;JIRA: 'C14493213', TS: ',C14493213,C14407248'
+102941;Developed;CONNECT-64457 - Web Client - send mail to group;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492306,C14492050', TS: ',C14492050,C14492306'
+102942;Developed;CONNECT-63523 - Web Client - Use calendar attachments;Test cases from JIRA and from TS portal do not match;JIRA: 'C14390517,C14390516,C14390514', TS: ',C14390514,C14390516,C14390517'
+102943;Developed;CONNECT-64459 - Web Client - Out of the office;Test cases from JIRA and from TS portal do not match;JIRA: 'C14495796', TS: ',C14495796'
+102944;Developed;CONNECT-64688 - Admin - Groups;Test cases from JIRA and from TS portal do not match;JIRA: 'C14521449,C14521448,C14521447', TS: ',C14521447,C14521448,C14521449'
+102945;Developed;CONNECT-64470 - Web Client - Use alias to public folder;Test cases from JIRA and from TS portal do not match;JIRA: 'C14498105,C14498104,C14498056', TS: 'C14498056,C14498104,C14498105'
+102946;Developed;CONNECT-64428 - CONNECT-64428;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492338', TS: 'C14492338'
+102947;Developed;CONNECT-64445 - Web Client - Search contacts;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492810', TS: ',C14492810'
+102948;Developed;CONNECT-64461 -- Web Client - Filters;Test cases from JIRA and from TS portal do not match;JIRA: 'C14495818,C14495816', TS: ',C14495816,C14495818'
+102949;Developed;CONNECT-64458 -- Web Client - calendar views;Test cases from JIRA and from TS portal do not match;JIRA: 'C14495851,C14495825,C14495815,C14495471,C14493286', TS: 'C14493286,C14495471,C14495815,C14495825,C14495851,'
+102950;Developed;CONNECT-63221 -- Admin - Filter emails;Test cases from JIRA and from TS portal do not match;JIRA: 'C14390229,C14390185,C14389839,C14389831,C14389820,C14351478,C14351469,C14351410,C14345525', TS: ',C14345525,C14351410,C14351469,C14351478,C14389820'
+102951;Developed;CONNECT-64452 - Web Client - Use chat;Test cases from JIRA and from TS portal do not match;JIRA: 'C14492899,C14492898', TS: ',C14492898,C14492899'
+102952;Developed;CONNECT-64691 - Web client - Calendar event location;Test cases from JIRA and from TS portal do not match;JIRA: 'C14524918', TS: ',C14524918,C14521482'
+102953;Developed;CONNECT-64692 - Web client - Calendar for resources;Test cases from JIRA and from TS portal do not match;JIRA: 'C14536444', TS: ',C14521482,C14536444'
+102998;Developed;CONNECT-64693 - Web client - Calendar timezone;Test cases from JIRA and from TS portal do not match;JIRA: 'C14536476', TS: ',C14536476'
+103056;Developed;CONNECT-64451 - Web Client - Shared folders with you;Test cases from JIRA and from TS portal do not match;JIRA: 'C14495547', TS: ',,C14202749,C14495547'
