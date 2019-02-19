@@ -5,166 +5,270 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 const request = require('request');
 const csvdata = require('csvdata');
 const fs = require('fs');
+const os = require('os');
 
 const screen = {
     width: 640,
     height: 480
 };
 
+let errorFile = format("./health_analysis_errors_{0}.csv", new Date().toISOString());
+const write = (fileName, content) => {
+    fs.appendFileSync(fileName, format("{0}{1}",content, os.EOL), "utf-8");
+};
+
+
 const main = async () => {
 
     let products = {
-        "CONNECT" : {
-            "jiraKey" : "CONNECT",
-            "testRailId" : "367",
-            "csv" : "./kerio_connect_seqs_15_2019.csv"
+        // "KerioConnect" : {
+        //     "jiraKey" : "CONNECT",
+        //     "testRailId" : "367",
+        //     "csv" : "./kerio_connect_seqs_15_2019.csv"
+        // },
+        // "CxProcess" : {
+        //     "jiraKey" : "SBM",
+        //     "testRailId" : "269",
+        //     "csv" : "./cxprocess_seqs_18_02_2019.csv"
+        // },
+        // "CxMonitor" : {
+        //     "jiraKey" : "SONIC",
+        //     "testRailId" : "429",
+        //     "csv" : "./cxmonitor_seqs_19_02_2019.csv"
+        // },
+        "JiveStorageIntegrations" : {
+            "jiraKey" : "JVSINTG",
+            "testRailId" : "518",
+            "csv" : "./jive_storage_integrations_seqs_19_02_2019.csv"
         }
     };
 
-    //get list of test cases from JIRA ticket
-    //get data about test case from TestRail
-    //get sequences export from ts-portal
-
-
-    // console.log("1. read ts-portal csv");
-    // let csv = await readCSV("kerio_connect_seqs_15_2019.csv");
-    // console.log("2. build list of sequences with test cases");
-    // let sequences = await buildSequences(csv);
-    // console.log("3. for each sequence:");
-    // console.log(" 3.1 get E2E related");
-    // sequences = await adjustSequencesWithE2EsRelated(sequences);
-    // console.log(" 3.2 check is test case is mapped to TR test case");
-    // sequences = await adjustTestsWithTestRailTestCasesRelated(sequences);
-    // console.log("4. load data for e2es from JIRA");
-    // sequences = await loadE2EsData(sequences);
-    // fs.writeFileSync("kerio_connect_seqs_15_2019_4.json", JSON.stringify(sequences), "utf-8");
-    // let sequences = JSON.parse(fs.readFileSync("kerio_connect_seqs_15_2019_4.json", "utf-8"));
-    // console.log("5.load data for test cases from Test Rail");
-    // sequences = await loadTestCasesData(sequences, products["CONNECT"].testRailId);
-    // fs.writeFileSync("kerio_connect_seqs_15_2019_5.json", JSON.stringify(sequences), "utf-8");
-    let sequences = JSON.parse(fs.readFileSync("kerio_connect_seqs_15_2019_5.json", "utf-8"));
-
-    function isNotBoundToE2E(sequence) {
-        return !sequence.e2e;
+    if(!process.env.AD_NAME || !process.env.AD_PASS){
+        console.log("Specify AD_NAME and AN_PASS params for communication with JIRA and TestRail");
+        return;
     }
 
-    function dontHaveAnyTestRailCasesInside(sequence) {
-        return !(sequence.tests && sequence.tests.length > 0);
-    }
 
-    function JIRAE2EStatusIsDoneButSequenceIsDeprecated(sequence) {
-        if(sequence.e2eJira){
-            if(sequence.e2eJira.status === "Done" && sequence.state === "Deprecated"){
-                return true;
-            }
+    for(let key of Object.keys(products)){
+        let product = products[key];
+        console.log(key);
+        console.log("------------------------------------------------------------------------------");
+        console.log(format("1. read {0} csv",key));
+        let csv = await readCSV(product.csv);
+        console.log("2. build list of sequences with test cases");
+        let sequences = await buildSequences(csv);
+        console.log("3. for each sequence:");
+        console.log(" 3.1 get E2E related");
+        sequences = await adjustSequencesWithE2EsRelated(sequences);
+        console.log(" 3.2 check is test case is mapped to TR test case");
+        sequences = await adjustTestsWithTestRailTestCasesRelated(sequences);
+        console.log("4. load data for e2es from JIRA");
+        sequences = await loadE2EsData(sequences);
+        fs.writeFileSync(format("{0}_tmp_1.json",product.csv.replace(".csv","")), JSON.stringify(sequences), "utf-8");
+        sequences = JSON.parse(fs.readFileSync(format("{0}_tmp_1.json",product.csv.replace(".csv","")), "utf-8"));
+        console.log("5.load data for test cases from Test Rail");
+        sequences = await loadTestCasesData(sequences, product.testRailId);
+        fs.writeFileSync(format("{0}_tmp_2.json",product.csv.replace(".csv","")), JSON.stringify(sequences), "utf-8");
+        sequences = JSON.parse(fs.readFileSync(format("{0}_tmp_2.json",product.csv.replace(".csv","")), "utf-8"));
+
+        function isNotBoundToE2E(sequence) {
+            return !sequence.e2e;
         }
-        return false;
-    }
 
-    function JIRAE2EStatusIsNotDoneButSequenceIsDeveloped(sequence) {
-        if(sequence.e2eJira){
-            if(sequence.e2eJira.status !== "Done" && sequence.state === "Developed"){
-                return true;
-            }
+        function hasNotE2EBound(sequence) {
+            return (sequence.note2e);
         }
-        return false;
-    }
 
-    function hasIncorrectStatusesOfTestRailCasesInside(sequence) {
-        return getIncorrectStatusesOfTestRailCasesInside(sequence).length !== 0;
-    }
-    function getIncorrectStatusesOfTestRailCasesInside(sequence) {
-        let result = [];
-        let sequenceStatus = sequence.state;
-        if(sequenceStatus === "Developed"){
-            for(let test of sequence.tests){
-                if(test.testRail && test.testRailStatus !== "Automated"){
-                    result.push(test);
+        function hasNotFoundJiraIssue(sequence) {
+            return (sequence.notFoundJiraIssue);
+        }
+
+        function dontHaveAnyTestRailCasesInside(sequence) {
+            return !(sequence.tests && sequence.tests.length > 0);
+        }
+
+        function JIRAE2EStatusIsDoneButSequenceIsDeprecated(sequence) {
+            if(sequence.e2eJira){
+                if(sequence.e2eJira.status.toLowerCase() === "done" && sequence.state.toLowerCase() === "deprecated"){
+                    return true;
                 }
             }
+            return false;
         }
-        if(sequenceStatus === "Deprecated"){
-            for(let test of sequence.tests){
-                if(test.testRail && test.testRailStatus !== "Approved For Testing"){
-                    result.push(test);
+
+        function JIRAE2EStatusIsNotDoneButSequenceIsDeveloped(sequence) {
+            if(sequence.e2eJira){
+                if(sequence.e2eJira.status.toLowerCase() !== "done" && sequence.state.toLowerCase() === "developed"){
+                    return true;
                 }
             }
+            return false;
         }
-        return result;
-    }
-    const diff = function(a, b) {
-        return a.filter(function(i) {return b.indexOf(i) < 0;});
-    };
 
-    function hasMismatchOfJiraAndTestRailTestCases(sequence){
-        let tsPortalTests = sequence.tests;
-        let jiraTests = (sequence.e2eJira && sequence.e2eJira.tests)? sequence.e2eJira.tests : [];
-        if(tsPortalTests.length !== jiraTests.length){
-            return true;
-        } else {
-            let jiraToTsDiff = diff(jiraTests,tsPortalTests);
-            let tsToJiraDiff = diff(tsPortalTests, jiraTests);
-            if(jiraToTsDiff.length > 0 || tsToJiraDiff.length > 0){
-                return true;
-            }
+        function hasIncorrectStatusesOfTestRailCasesInside(sequence) {
+            return getIncorrectStatusesOfTestRailCasesInside(sequence).length !== 0;
         }
-        return false;
-    }
-    function getJiraTests(sequence){
-        if(sequence.e2eJira && sequence.e2eJira.tests){
-            return sequence.e2eJira.tests;
-        }
-        return [];
-    }
-    function getTSTests(sequence){
-        if(sequence.tests){
-            return sequence.tests.map(t => {
-               if(t.testRail){
-                   return t.testRail;
-               }
-            });
-        }
-        return [];
-    }
-
-    console.log(format("Sequence ID;State;Sequence Title;Error;Details"));
-    for(let key of Object.keys(sequences)){
-        let sequence = sequences[key];
-        let _isNotBoundToE2E = isNotBoundToE2E(sequence);
-        let _dontHaveAnyTestRailCasesInside = dontHaveAnyTestRailCasesInside(sequence);
-        let _JIRAE2EStatusIsDoneButSequenceIsDeprecated = JIRAE2EStatusIsDoneButSequenceIsDeprecated(sequence);
-        let _JIRAE2EStatusIsNotDoneButSequenceIsDeveloped = JIRAE2EStatusIsNotDoneButSequenceIsDeveloped(sequence);
-        let _hasIncorrectStatusesOfTestRailCasesInside = hasIncorrectStatusesOfTestRailCasesInside(sequence);
-        let listOfTestCasesWithIncorrectStatuses = getIncorrectStatusesOfTestRailCasesInside(sequence);
-        let hasMismatchOfJiraandTestRailTestCases = hasMismatchOfJiraAndTestRailTestCases(sequence);
-        let jiraTestCases = getJiraTests(sequence);
-        let tSTestCases = getTSTests(sequence);
-        if(_isNotBoundToE2E){
-            console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence is not bound to E2E", ""));
-        }
-        if(!_isNotBoundToE2E && sequence.state === "Deprecated"){
-            console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence bound to E2E but deprecated", ""));
-        }
-        if(_dontHaveAnyTestRailCasesInside){
-            console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Don't have any Test Rail cases", ""));
-        }
-        if(!_isNotBoundToE2E &&_JIRAE2EStatusIsDoneButSequenceIsDeprecated){
-            console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "JIRA status is DONE but sequence is deprecated", ""));
-        }
-        if(!_isNotBoundToE2E && _JIRAE2EStatusIsNotDoneButSequenceIsDeveloped){
-            console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, format("JIRA status is '{0}' but sequence is deprecated", sequence.e2eJira.status), ""));
-        }
-        if(_hasIncorrectStatusesOfTestRailCasesInside){
+        function getIncorrectStatusesOfTestRailCasesInside(sequence) {
+            let result = [];
             let sequenceStatus = sequence.state;
             if(sequenceStatus === "Developed"){
-                console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Test cases status should be Automated", listOfTestCasesWithIncorrectStatuses.map(t => t.testRail + ":" + t.testRailStatus)));
+                for(let test of sequence.tests){
+                    if(test.testRail && test.testRailStatus && test.testRailStatus.toLowerCase() !== "automated"){
+                        result.push(test);
+                    }
+                }
             }
             if(sequenceStatus === "Deprecated"){
-                console.log(format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Test cases status should be Approved For Testing", listOfTestCasesWithIncorrectStatuses.map(t => t.testRail + ":" + t.testRailStatus)));
+                for(let test of sequence.tests){
+                    if(test.testRail && test.testRailStatus && test.testRailStatus.toLowerCase() !== "approved for testing"){
+                        result.push(test);
+                    }
+                }
+            }
+            return result;
+        }
+        const diff = function(a, b) {
+            return a.filter(function(i) {return b.indexOf(i) < 0;});
+        };
+
+        function hasMismatchOfJiraAndTestRailTestCases(sequence){
+            let tsPortalTests = sequence.tests;
+            let jiraTests = (sequence.e2eJira && sequence.e2eJira.tests)? sequence.e2eJira.tests : [];
+            if(tsPortalTests.length !== jiraTests.length){
+                return true;
+            } else {
+                let jiraToTsDiff = diff(jiraTests,tsPortalTests);
+                let tsToJiraDiff = diff(tsPortalTests, jiraTests);
+                if(jiraToTsDiff.length > 0 || tsToJiraDiff.length > 0){
+                    return true;
+                }
+            }
+            return false;
+        }
+        function hasNotFoundTestRailTestCases(sequence){
+            for(let test of sequence.tests){
+                if(!test.testRailStatus){
+                    return true;
+                }
             }
         }
-        if(!_isNotBoundToE2E && hasMismatchOfJiraandTestRailTestCases){
-            console.log(format("{0};{1};\{2};{3};{4}", sequence.id, sequence.state, sequence.title, "Test cases from JIRA and from TS portal do not match", format("JIRA: '{0}', TS: '{1}'", jiraTestCases, tSTestCases)));
+        function getNotFoundTestRailTestCases(sequence){
+            let result = [];
+            for(let test of sequence.tests){
+                if(!test.testRailStatus){
+                    result.push(test.title);
+                }
+            }
+            return result;
+        }
+        function getJiraTests(sequence){
+            if(sequence.e2eJira && sequence.e2eJira.tests){
+                return sequence.e2eJira.tests;
+            }
+            return [];
+        }
+        function getTSTests(sequence){
+            let result = [];
+            for(let test of sequence.tests){
+                result.push(test.testRail);
+            }
+            return result;
+        }
+
+        let output = format("Sequence ID;State;Sequence Title;Error;Details");
+        let resultFile = format("health_analysis_{0}_{1}.csv", key.toLowerCase(), new Date().toISOString());
+        console.log(output);
+        write(resultFile, output);
+        for(let key of Object.keys(sequences)){
+            let sequence = sequences[key];
+            let _isNotBoundToE2E = isNotBoundToE2E(sequence);
+            let _hasNotE2EBound = hasNotE2EBound(sequence);
+            let _hasNotFoundJiraIssue = hasNotFoundJiraIssue(sequence);
+            let _dontHaveAnyTestRailCasesInside = dontHaveAnyTestRailCasesInside(sequence);
+            let _JIRAE2EStatusIsDoneButSequenceIsDeprecated = JIRAE2EStatusIsDoneButSequenceIsDeprecated(sequence);
+            let _JIRAE2EStatusIsNotDoneButSequenceIsDeveloped = JIRAE2EStatusIsNotDoneButSequenceIsDeveloped(sequence);
+            let _hasIncorrectStatusesOfTestRailCasesInside = hasIncorrectStatusesOfTestRailCasesInside(sequence);
+            let listOfTestCasesWithIncorrectStatuses = getIncorrectStatusesOfTestRailCasesInside(sequence);
+            let _hasMismatchOfJiraandTestRailTestCases = hasMismatchOfJiraAndTestRailTestCases(sequence);
+            let _hasNotFoundTestRailTestCases = hasNotFoundTestRailTestCases(sequence);
+            let jiraTestCases = getJiraTests(sequence);
+            let tSTestCases = getTSTests(sequence);
+            let notFoundTestCases = getNotFoundTestRailTestCases(sequence);
+
+            if(_isNotBoundToE2E && !_hasNotE2EBound){
+                output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence is not bound to E2E", "");
+                console.log(output);
+                write(resultFile, output);
+            }
+
+            if(_hasNotFoundJiraIssue){
+                output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title,
+                    "Sequence is bound to JIRA issue but it is not found in JIRA now", sequence.notFoundJiraIssue);
+                console.log(output);
+                write(resultFile, output);
+            }
+
+
+            if(_isNotBoundToE2E && _hasNotE2EBound){
+                output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence is not bound to E2E", format("Bound to {0} instead", sequence.note2e));
+                console.log(output);
+                write(resultFile, output);
+            }
+
+
+            if(_dontHaveAnyTestRailCasesInside){
+                output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence don't have any Test Rail cases", "");
+                console.log(output);
+                write(resultFile, output);
+            }
+
+            if(!_isNotBoundToE2E && _JIRAE2EStatusIsDoneButSequenceIsDeprecated){
+                output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence is related to JIRA E2E which status is DONE but sequence is deprecated", "");
+                console.log(output);
+                write(resultFile, output);
+            }
+
+            if(!_isNotBoundToE2E && _JIRAE2EStatusIsNotDoneButSequenceIsDeveloped){
+                output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, format("Sequence is related to JIRA status is '{0}' but sequence is deprecated", sequence.e2eJira.status), "")
+                console.log(output);
+                write(resultFile, output);
+            }
+
+            if(_hasIncorrectStatusesOfTestRailCasesInside){
+                let sequenceStatus = sequence.state;
+                if(sequenceStatus === "Developed"){
+                    output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence contains test cases which status should be Automated",
+                        listOfTestCasesWithIncorrectStatuses.map(t => {
+                            if(t.testRailStatus){
+                                return t.testRail + ":" + t.testRailStatus
+                            }
+                        }));
+                    console.log(output);
+                    write(resultFile, output);
+                }
+                if(sequenceStatus === "Deprecated"){
+                    output = format("{0};{1};\"{2}\";{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence contains test cases which test cases status should be Approved For Testing",
+                        listOfTestCasesWithIncorrectStatuses.map(t => {
+                            if(t.testRailStatus){
+                                return t.testRail + ":" + t.testRailStatus
+                            }
+                        }));
+                    console.log(output);
+                    write(resultFile, output);
+                }
+            }
+            if(!_isNotBoundToE2E && _hasMismatchOfJiraandTestRailTestCases){
+                output = format("{0};{1};\{2};{3};{4}", sequence.id, sequence.state, sequence.title, "Sequence has test cases from JIRA and from TS portal that do not match", format("JIRA: '{0}', TS: '{1}'", jiraTestCases, tSTestCases));
+                console.log(output);
+                write(resultFile, output);
+            }
+            if(_hasNotFoundTestRailTestCases){
+                output = format("{0};{1};\{2};{3};{4}", sequence.id, sequence.state, sequence.title,
+                    format("Sequence contains tests are not found in https://testrail.devfactory.com/index.php?/projects/overview/{0} Test Rail project",
+                        product.testRailId), format("'{0}'", notFoundTestCases));
+                console.log(output);
+                write(resultFile, output);
+            }
         }
     }
 };
@@ -235,26 +339,33 @@ const adjustTestsWithTestRailTestCasesRelated = async (sequences) => {
 };
 
 const loadE2EsData = async (sequences) => {
-    let e2es = {};
+    let e2es = [];
     for(let key of Object.keys(sequences)){
         let seq = sequences[key];
         if(seq.e2e){
-            e2es[seq.e2e] = {};
+            e2es.push(seq.e2e);
         }
     }
-    for(let key of Object.keys(e2es)){
-        console.log("\tloading status for " + key);
-        e2es[key].status = await getJIRATicketStatus(key);
-    }
-    let e2esWithTestCases = await getTestCasesFromJira(Object.keys(e2es));
-    for(let key of Object.keys(e2esWithTestCases)){
-        e2es[key].tests = e2esWithTestCases[key].tests;
-    }
+    let jiraTickets = await getDataFromJira(e2es);//{key: "", type: "", status: "", tests:[]}
     for(let key of Object.keys(sequences)){
-        let seq = sequences[key];
-        if(seq.e2e && e2es[seq.e2e]){
-            seq.e2eJira = e2es[seq.e2e];
-            seq.e2eJira.key = seq.e2e;
+        let sequence = sequences[key];
+        for(let jira of jiraTickets){
+            if(sequence.e2e === jira.key){
+                if(jira.type === "not found"){
+                  sequence.e2e = null;
+                  sequence.notFoundJiraIssue = jira.key;
+                } else if(jira.type === "End-to-end Test"){
+                    sequence.e2eJira = {
+                        key : jira.e2e,
+                        status : jira.status,
+                        tests : jira.tests,
+                        type : jira.type
+                    }
+                } else {
+                    sequence.note2e = sequence.e2e;
+                    sequence.e2e = null;
+                }
+            }
         }
     }
     return sequences;
@@ -283,33 +394,64 @@ const loadTestCasesData = async (sequences, projectID) => {
     return sequences;
 };
 
-const getTestCasesFromJira = async (keys) => {
-    let result = {};
+const getDataFromJira = async (keys) => {
+    const isElementPresent = async (driver, by) => {
+        return new Promise((resolve, reject) => {
+            driver.findElement(by).then(function(webElement) {
+                resolve(true);
+            }, function(err) {
+                if (err.state && err.state === 'no such element') {
+                    resolve(false);
+                } else {
+                    resolve(false);
+                }
+            });
+
+        });
+    };
+    let results = [];
     const driver = new Builder()
         .forBrowser('chrome')
         .setChromeOptions(new chrome.Options().headless().windowSize(screen))
         .setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
         .build();
     await driver.get("https://testrail.devfactory.com");
-    await driver.findElement(By.id('name')).sendKeys("mzaytsev");
-    await driver.findElement(By.id('password')).sendKeys(process.env.JIRA_PASS, Key.RETURN);
+    await driver.findElement(By.id('name')).sendKeys(process.env.AD_NAME);
+    await driver.findElement(By.id('password')).sendKeys(process.env.AD_PASS, Key.RETURN);
     await driver.get("https://jira.devfactory.com/browse/CONNECT-68050");
-    await driver.findElement(By.id('login-form-username')).sendKeys("mzaytsev");
-    await driver.findElement(By.id('login-form-password')).sendKeys(process.env.JIRA_PASS, Key.RETURN);
+    await driver.findElement(By.id('login-form-username')).sendKeys(process.env.AD_NAME);
+    await driver.findElement(By.id('login-form-password')).sendKeys(process.env.AD_PASS, Key.RETURN);
     for(let key of keys){
         console.log("\tloading test cases for " + key);
         await driver.get("https://jira.devfactory.com/browse/" + key);
-        await driver.switchTo().frame("tr-frame-panel-references");
-        let cases = await driver.findElements(By.css("div.grid-column.text-ppp"));
-        result[key] = {
-            tests : []
-        };
-        for(let c of cases){
-            let text = await c.getText();
-            result[key].tests.push(text);
+        if(await isElementPresent(driver, By.id("type-val"))){
+            let type = await driver.findElement(By.id("type-val"));
+            type = await type.getText();
+            let status = await driver.findElement(By.css("#status-val > span"));
+            status = await status.getText();
+            await driver.switchTo().frame("tr-frame-panel-references");
+            let cases = await driver.findElements(By.css("div.grid-column.text-ppp"));
+            let result = {
+                key: key,
+                tests: [],
+                status: status,
+                type: type
+            };
+            for(let c of cases){
+                let text = await c.getText();
+                result.tests.push(text);
+            }
+            results.push(result);
+        } else {
+            let result = {
+                key: key,
+                type: "not found"
+            };
+            results.push(result);
         }
     }
-    return result;
+    console.log(results);
+    return results;
 };
 
 const getTestRailCase = async (id) => {
@@ -424,15 +566,27 @@ const getJIRATicket = async (key) => {
             if(error){
                 reject();
             } else {
-                resolve(JSON.parse(body).issues[0]);
+                let b = JSON.parse(body);
+                if(b.errorMessages && b.errorMessages.length > 0){
+                    write(errorFile, b.errorMessages);
+                }
+                if(b.issues){
+                    resolve(b.issues[0]);
+                } else {
+                    resolve([]);
+                }
             }
         });
     });
 };
 
-const getJIRATicketStatus = async (key) => {
+const getE2ETicketStatus = async (key) => {
   let jira = await getJIRATicket(key);
-  return jira.fields.status.name;
+  if(jira && jira.fields){
+      return jira.fields.status.name;
+  } else {
+      return "";
+  }
 };
 
 
